@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempreture Convertor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Temperature Converter</h1>
+        <div class="content">
+            <div class="farenheight">
+                <h2>Fahrenheit</h2>
+                <input id="fahrenheit" type="number" placeholder="Fahrenheit Value" class="input"
+                    oninput="tempreture(this.value)" onchange="tempreture(this.value)">
+            </div>
+            <div class="celcius">
+                <h2>Celcius:</h2>
+                <p id="celcius-c" class="input">
+            </div>
+        </div>
+        <hr style="background-color: black;">
+        <hr style="background-color: black;">
+        <div class="content">
+            <div class="celcius">
+                <h2>Celcius:</h2>
+                <input id="celcius-cel" type="number" placeholder="Celcius Value" class="input"
+                    oninput="tempreturefaren(this.value)" onchange="tempreture(this.value)">
+            </div>
+            <div class="farenheight">
+                <h2>Fahrenheit</h2>
+                <p id="farenheight-c" class="input">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function tempreture(values) {
+            values = parseFloat(values);
+            document.getElementById("celcius-c").innerHTML = (values - 32) / 1.8;
+        }
+        function tempreturefaren(values) {
+            values = parseFloat(values);
+            document.getElementById("farenheight-c").innerHTML = (values * 1.8) + 32;
+        }
+
+    </script>
+</body>
+
+</html>
